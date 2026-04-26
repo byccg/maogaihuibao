@@ -101,13 +101,15 @@
         return res.text();
       })
       .then(function (text) {
-        var normalized = text.replace(/\r\n/g, "\n");
+        var normalized = text.replace(/\r\n|\r/g, "\n");
         if (!normalized.trim()) throw new Error("empty text");
         letterTextCache[data.textFile] = normalized;
         return normalized;
       })
       .catch(function () {
-        return data.text || LETTER_TEXT_FALLBACK;
+        var fallbackText = data.text || LETTER_TEXT_FALLBACK;
+        letterTextCache[data.textFile] = fallbackText;
+        return fallbackText;
       });
   }
 
