@@ -15,7 +15,7 @@
 | `#home` | 首页英雄区（全屏背景 + 标题） |
 | `#background` | 时代背景（历史图文 + 视频） |
 | `#journey` | 工程历程（横向时间轴） |
-| `#letters` | 家书长廊（5 张弹窗卡片 + 词云） |
+| `#letters` | 家书长廊（6 张弹窗卡片 + 词云） |
 | `#theory` | 理论之光（三大理论成果） |
 | `#outcome` | 辉煌结局（三大历史成果 + 视频） |
 | `#interaction` | 致未来（留言互动区） |
@@ -54,6 +54,14 @@
     │   │   └── legacy.jpg              # 神舟/北斗现代图
     │   └── interaction/
     │       └── future-bg.jpg           # 留言区背景（星空+信纸）
+    ├── text/
+    │   └── letters/
+    │       ├── qiansanqiang.txt          # 钱三强家书文本
+    │       ├── qianxuesen.txt            # 钱学森家书文本
+    │       ├── yumin.txt                 # 于敏家书文本
+    │       ├── yaotongbin.txt            # 姚桐斌家书文本
+    │       ├── guoyonghuai.txt           # 郭永怀家书文本
+    │       └── dengjiaxian.txt           # 邓稼先家书文本
     └── videos/
         ├── background.mp4              # 时代背景视频
         ├── journey.mp4                 # 工程历程动画
