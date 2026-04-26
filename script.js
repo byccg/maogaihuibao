@@ -129,6 +129,7 @@
     if (typeof path !== "string") return "";
     var value = path.trim();
     if (!value) return "";
+    if (value.indexOf("..") !== -1) return "";
     return /^assets\/[a-zA-Z0-9_./-]+$/.test(value) ? value : "";
   }
 
@@ -144,7 +145,7 @@
 
     return {
       title: title,
-      image: normalizeAssetPath(image),
+      image: image || "",
       textFile: letterTextFileById[normalizedId] || "",
     };
   }
