@@ -74,17 +74,10 @@ button {
 .nav-inner {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 6px 22px;
   padding: 0 24px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.nav-inner::-webkit-scrollbar {
-  display: none;
 }
 
 .nav-inner a {
