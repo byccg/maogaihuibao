@@ -33,9 +33,30 @@
   ============================================================ */
 
   var letterData = {
+    qiansanqiang: {
+      title: "钱三强 · 家书",
+      image: "assets/images/letters/qiansanqiang-1.jpg",
+      textFile: "assets/text/letters/qiansanqiang.txt",
+    },
+    qianxuesen: {
+      title: "钱学森 · 家书",
+      image: "assets/images/letters/qianxuesen-1.jpg",
+      textFile: "assets/text/letters/qianxuesen.txt",
+    },
+    yumin: {
+      title: "于敏 · 家书",
+      image: "assets/images/letters/yumin-1.jpg",
+      textFile: "assets/text/letters/yumin.txt",
+    },
+    yaotongbin: {
+      title: "姚桐斌 · 家书",
+      image: "assets/images/letters/yaotongbin-1.jpg",
+      textFile: "assets/text/letters/yaotongbin.txt",
+    },
     deng: {
-      title: "邓稼先 · 1964年",
+      title: "邓稼先 · 家书",
       image: "assets/images/letters/deng-1.jpg",
+      textFile: "assets/text/letters/dengjiaxian.txt",
       text:
         "我的生命就献给未来的工作了。做好了，也不足为奇；不好，我也没脸见人。\n\n" +
         "我将来的命运就靠这件事了……我背井离乡、扔掉一切、委屈你和孩子，" +
@@ -43,45 +64,15 @@
         "你若是真的爱我，就放开我的手，让我去做这件大事吧。",
     },
     guo: {
-      title: "郭永怀 · 归国家书",
+      title: "郭永怀 · 家书",
       image: "assets/images/letters/guo-1.jpg",
+      textFile: "assets/text/letters/guoyonghuai.txt",
       text:
         "我回国的唯一目的，就是为祖国服务。\n\n" +
         "中国现在很穷，但是，将来的中国，必将远比美国进步。" +
         "我要回去为她服务……\n\n" +
         "我们是中国人，我们应该为中国人民服务。\n\n" +
         "——郭永怀，于归国前夕写给同事的信",
-    },
-    wang: {
-      title: "王淦昌 · 家书",
-      image: "assets/images/letters/wang-1.jpg",
-      text:
-        "愿以身许国，不负年华。\n\n" +
-        "我虽已改名换姓，但在这片戈壁荒滩上，" +
-        "每个人都清楚我们在做什么，为什么而做。\n\n" +
-        "为了这个国家，为了这片土地上的人民，再苦再难，也值得。\n\n" +
-        "希望你们在家里平平安安，等我完成任务归来。",
-    },
-    peng: {
-      title: "彭桓武 · 家书",
-      image: "assets/images/letters/peng-1.jpg",
-      text:
-        "国家需要我，我便去做。\n\n" +
-        "这是我的选择，也是我的责任。" +
-        "家人的牵挂是我前行的动力，但国家的需要高于一切。\n\n" +
-        "等到任务完成的那天，我一定回来好好陪伴你们。\n\n" +
-        "请不要担心我，这里的同志们都很好，我们彼此照应。",
-    },
-    zhu: {
-      title: "朱光亚 · 致同学书",
-      image: "assets/images/letters/zhu-1.jpg",
-      text:
-        "朋友们，我们都是中国人。\n\n" +
-        "我们离开家乡，来到外国求学，学成以后，就应该回去报效祖国。\n\n" +
-        "科学无国界，但科学家有祖国。" +
-        "祖国正在等待我们，我们需要回去建设她。\n\n" +
-        "我要回去了，愿有志于此的同学和我一起踏上归途。\n\n" +
-        "——朱光亚，1950年于美国",
     },
   };
 
@@ -94,14 +85,42 @@
   var modalImage = $("#modalImage");
   var modalText  = $("#modalText");
   var closeBtn   = $("#closeModal");
+  var letterTextCache = {};
+  var openModalToken = 0;
+  var LETTER_TEXT_LOADING = "家书内容加载中……";
+  var LETTER_TEXT_FALLBACK = "家书内容待补充。";
 
-  function openModal(id) {
+  function loadLetterText(data) {
+    if (!data) return Promise.resolve("");
+    if (!data.textFile) return Promise.resolve(data.text || "");
+    if (letterTextCache[data.textFile]) return Promise.resolve(letterTextCache[data.textFile]);
+
+    return fetch(data.textFile)
+      .then(function (res) {
+        if (!res.ok) throw new Error("failed to load text");
+        return res.text();
+      })
+      .then(function (text) {
+        var normalized = text.replace(/\r\n|\r/g, "\n");
+        if (!normalized.trim()) throw new Error("empty text");
+        letterTextCache[data.textFile] = normalized;
+        return normalized;
+      })
+      .catch(function () {
+        var fallbackText = data.text || LETTER_TEXT_FALLBACK;
+        letterTextCache[data.textFile] = fallbackText;
+        return fallbackText;
+      });
+  }
+
+  async function openModal(id) {
     if (!modal) return;
     var data = letterData[id];
     if (!data) return;
+    var token = ++openModalToken;
 
     if (modalTitle) modalTitle.textContent = data.title;
-    if (modalText)  modalText.textContent  = data.text;
+    if (modalText)  modalText.textContent  = LETTER_TEXT_LOADING;
 
     if (modalImage) {
       modalImage.src = data.image;
@@ -127,6 +146,10 @@
     if (closeBtn) {
       setTimeout(function () { closeBtn.focus(); }, 60);
     }
+
+    var loadedText = await loadLetterText(data);
+    if (token !== openModalToken) return;
+    if (modalText) modalText.textContent = loadedText;
   }
 
   function closeModal() {
@@ -185,11 +208,12 @@
     ["氢弹", 18],
     ["原子弹", 20],
     ["东方红", 22],
+    ["钱三强", 18],
+    ["钱学森", 18],
+    ["于敏", 18],
+    ["姚桐斌", 18],
     ["邓稼先", 18],
     ["郭永怀", 18],
-    ["王淦昌", 16],
-    ["彭桓武", 16],
-    ["朱光亚", 16],
     ["爱国", 24],
     ["坚守", 20],
     ["报国", 22],
