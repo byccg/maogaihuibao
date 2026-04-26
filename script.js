@@ -75,6 +75,20 @@
         "——郭永怀，于归国前夕写给同事的信",
     },
   };
+  var letterDataAlias = {
+    dengjiaxian: "deng",
+    guoyonghuai: "guo",
+  };
+  var letterTextFileById = {
+    qiansanqiang: "assets/text/letters/qiansanqiang.txt",
+    qianxuesen: "assets/text/letters/qianxuesen.txt",
+    yumin: "assets/text/letters/yumin.txt",
+    yaotongbin: "assets/text/letters/yaotongbin.txt",
+    deng: "assets/text/letters/dengjiaxian.txt",
+    dengjiaxian: "assets/text/letters/dengjiaxian.txt",
+    guo: "assets/text/letters/guoyonghuai.txt",
+    guoyonghuai: "assets/text/letters/guoyonghuai.txt",
+  };
 
   /* ============================================================
      2. 模态框
@@ -113,9 +127,26 @@
       });
   }
 
-  async function openModal(id) {
+  function getLetterData(id, triggerEl) {
+    var normalizedId = letterDataAlias[id] || id;
+    var dataFromMap = letterData[normalizedId];
+    if (dataFromMap) return dataFromMap;
+    if (!triggerEl) return null;
+
+    var title = triggerEl.getAttribute("data-title");
+    var image = triggerEl.getAttribute("data-image");
+    if (!title) return null;
+
+    return {
+      title: title,
+      image: image || "",
+      textFile: letterTextFileById[id] || "",
+    };
+  }
+
+  async function openModal(id, triggerEl) {
     if (!modal) return;
-    var data = letterData[id];
+    var data = getLetterData(id, triggerEl);
     if (!data) return;
     var token = ++openModalToken;
 
@@ -162,7 +193,7 @@
   $$(".letter-card").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var id = this.getAttribute("data-id");
-      if (id) openModal(id);
+      if (id) openModal(id, this);
     });
   });
 
