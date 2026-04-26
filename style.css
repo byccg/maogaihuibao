@@ -66,6 +66,7 @@ button {
   -webkit-backdrop-filter: blur(14px);
   background: rgba(5, 14, 30, 0.78);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,19 +75,27 @@ button {
 .nav-inner {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 6px 22px;
-  padding: 0 24px;
+  gap: 6px 12px;
+  width: min(1180px, 100%);
+  padding: 0 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-inner a {
   font-size: 14px;
   letter-spacing: 0.05em;
   color: rgba(245, 241, 232, 0.82);
-  padding: 6px 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
   border-bottom: 2px solid transparent;
-  transition: color var(--transition), border-color var(--transition);
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
   white-space: nowrap;
 }
 
@@ -94,6 +103,7 @@ button {
 .nav-inner a.active {
   color: var(--color-gold);
   border-bottom-color: var(--color-gold);
+  background: rgba(216, 180, 106, 0.12);
 }
 
 /* 移动端汉堡按钮（默认隐藏） */
