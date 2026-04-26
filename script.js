@@ -85,9 +85,7 @@
     yumin: "assets/text/letters/yumin.txt",
     yaotongbin: "assets/text/letters/yaotongbin.txt",
     deng: "assets/text/letters/dengjiaxian.txt",
-    dengjiaxian: "assets/text/letters/dengjiaxian.txt",
     guo: "assets/text/letters/guoyonghuai.txt",
-    guoyonghuai: "assets/text/letters/guoyonghuai.txt",
   };
 
   /* ============================================================
@@ -127,6 +125,13 @@
       });
   }
 
+  function normalizeAssetPath(path) {
+    if (typeof path !== "string") return "";
+    var value = path.trim();
+    if (!value) return "";
+    return /^assets\/[a-zA-Z0-9_./-]+$/.test(value) ? value : "";
+  }
+
   function getLetterData(id, triggerEl) {
     var normalizedId = letterDataAlias[id] || id;
     var dataFromMap = letterData[normalizedId];
@@ -139,8 +144,8 @@
 
     return {
       title: title,
-      image: image || "",
-      textFile: letterTextFileById[id] || "",
+      image: normalizeAssetPath(image),
+      textFile: letterTextFileById[normalizedId] || "",
     };
   }
 
@@ -154,7 +159,7 @@
     if (modalText)  modalText.textContent  = LETTER_TEXT_LOADING;
 
     if (modalImage) {
-      modalImage.src = data.image;
+      modalImage.src = normalizeAssetPath(data.image);
       modalImage.alt = data.title + " 家书扫描件";
 
       /* 图片加载失败时，隐藏 img，显示占位文字 */
