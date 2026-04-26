@@ -160,7 +160,12 @@
     if (modalText)  modalText.textContent  = LETTER_TEXT_LOADING;
 
     if (modalImage) {
-      modalImage.src = normalizeAssetPath(data.image);
+      var safeImagePath = normalizeAssetPath(data.image);
+      if (safeImagePath) {
+        modalImage.src = safeImagePath;
+      } else {
+        modalImage.removeAttribute("src");
+      }
       modalImage.alt = data.title + " 家书扫描件";
 
       /* 图片加载失败时，隐藏 img，显示占位文字 */
