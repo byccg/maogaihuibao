@@ -74,7 +74,7 @@ button {
 .nav-inner {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 6px 22px;
   padding: 0 24px;
@@ -113,6 +113,7 @@ button {
 .section {
   padding: clamp(80px, 10vw, 130px) 20px clamp(60px, 8vw, 100px);
   position: relative;
+  scroll-margin-top: calc(var(--nav-h) + 12px);
 }
 
 .section.bg-dark    { background: var(--color-bg); }
@@ -791,6 +792,13 @@ button {
   transform: translateY(0);
 }
 
+@supports (height: 100svh) {
+  .hero-section,
+  .interaction-section {
+    min-height: 100svh;
+  }
+}
+
 /* ---------- 响应式：平板 ---------- */
 @media (max-width: 1024px) {
   .three-col,
@@ -811,8 +819,8 @@ button {
   }
 }
 
-/* ---------- 响应式：移动端 ---------- */
-@media (max-width: 640px) {
+/* ---------- 响应式：中小屏导航 ---------- */
+@media (max-width: 900px) {
   .navbar {
     justify-content: flex-start;
     padding-left: 16px;
@@ -845,7 +853,10 @@ button {
   .nav-toggle {
     display: block;
   }
+}
 
+/* ---------- 响应式：移动端 ---------- */
+@media (max-width: 640px) {
   .three-col,
   .theory-grid,
   .timeline,
