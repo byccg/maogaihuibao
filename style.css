@@ -16,6 +16,7 @@
   --radius-sm:       10px;
   --radius-md:       16px;
   --radius-lg:       24px;
+  --radius-pill:     999px;
   --shadow:          0 8px 32px rgba(0, 0, 0, 0.45);
   --transition:      0.25s ease;
   --nav-max-w:       1180px;
@@ -76,17 +77,11 @@ button {
 .nav-inner {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 6px clamp(10px, 1.6vw, 20px);
   width: min(var(--nav-max-w), 100%);
   padding: 0 14px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.nav-inner::-webkit-scrollbar {
-  display: none;
 }
 
 .nav-inner a {
@@ -94,7 +89,7 @@ button {
   letter-spacing: 0.05em;
   color: rgba(245, 241, 232, 0.82);
   padding: 6px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border-bottom: 2px solid transparent;
   transition: color var(--transition), border-color var(--transition), background var(--transition);
   white-space: nowrap;
