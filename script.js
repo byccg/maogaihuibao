@@ -101,8 +101,8 @@
         return res.text();
       })
       .then(function (text) {
-        var normalized = text.replace(/\r\n/g, "\n").trim();
-        if (!normalized) throw new Error("empty text");
+        var normalized = text.replace(/\r\n/g, "\n");
+        if (!normalized.trim()) return LETTER_TEXT_FALLBACK;
         letterTextCache[data.textFile] = normalized;
         return normalized;
       })
