@@ -200,6 +200,12 @@ button {
   margin-bottom: 16px;
 }
 
+@media (min-width: 1025px) {
+  .hero-title {
+    white-space: nowrap;
+  }
+}
+
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.35rem);
   color: rgba(245, 241, 232, 0.8);
