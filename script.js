@@ -91,13 +91,15 @@
   var closeBtn   = $("#closeModal");
   var letterTextCache = {};
   var openModalToken = 0;
+  var LETTER_TEXT_LOADING = "家书内容加载中……";
+  var LETTER_TEXT_FALLBACK = "家书内容待补充。";
 
   function loadLetterText(data) {
     if (!data) return Promise.resolve("");
     if (!data.textFile) return Promise.resolve(data.text || "");
     if (letterTextCache[data.textFile]) return Promise.resolve(letterTextCache[data.textFile]);
 
-    return fetch(data.textFile, { cache: "no-store" })
+    return fetch(data.textFile)
       .then(function (res) {
         if (!res.ok) throw new Error("failed to load text");
         return res.text();
@@ -109,7 +111,7 @@
         return normalized;
       })
       .catch(function () {
-        return data.text || "家书内容待补充。";
+        return data.text || LETTER_TEXT_FALLBACK;
       });
   }
 
@@ -120,7 +122,7 @@
     var token = ++openModalToken;
 
     if (modalTitle) modalTitle.textContent = data.title;
-    if (modalText)  modalText.textContent  = "家书内容加载中……";
+    if (modalText)  modalText.textContent  = LETTER_TEXT_LOADING;
 
     if (modalImage) {
       modalImage.src = data.image;
