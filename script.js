@@ -37,25 +37,21 @@
       title: "钱三强 · 家书",
       image: "assets/images/letters/qiansanqiang-1.jpg",
       textFile: "assets/text/letters/qiansanqiang.txt",
-      text: "钱三强家书内容待补充。",
     },
     qianxuesen: {
       title: "钱学森 · 家书",
       image: "assets/images/letters/qianxuesen-1.jpg",
       textFile: "assets/text/letters/qianxuesen.txt",
-      text: "钱学森家书内容待补充。",
     },
     yumin: {
       title: "于敏 · 家书",
       image: "assets/images/letters/yumin-1.jpg",
       textFile: "assets/text/letters/yumin.txt",
-      text: "于敏家书内容待补充。",
     },
     yaotongbin: {
       title: "姚桐斌 · 家书",
       image: "assets/images/letters/yaotongbin-1.jpg",
       textFile: "assets/text/letters/yaotongbin.txt",
-      text: "姚桐斌家书内容待补充。",
     },
     deng: {
       title: "邓稼先 · 家书",
