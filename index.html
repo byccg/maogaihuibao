@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="沉浸式单页网站——两弹一星元勋的戈壁家书，穿越时空的信仰回响。" />
+  <title>《"两弹一星"元勋的戈壁家书》</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== 顶部固定导航栏 ===== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner" aria-label="主导航">
+      <a href="#home">首页</a>
+      <a href="#background">时代背景</a>
+      <a href="#journey">工程历程</a>
+      <a href="#letters">家书长廊</a>
+      <a href="#theory">理论之光</a>
+      <a href="#outcome">辉煌结局</a>
+      <a href="#interaction">致未来</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="展开/收起导航" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ===== 区块1：首页 ===== -->
+    <section id="home" class="section hero-section">
+      <div class="hero-bg">
+        <img
+          src="assets/images/home/bg-home.jpg"
+          alt="戈壁滩星空背景"
+          class="hero-bg-img"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <div class="overlay"></div>
+      <div class="hero-content fade-in">
+        <p class="hero-label">1964 · 罗布泊</p>
+        <h1 class="hero-title">《"两弹一星"元勋的戈壁家书》</h1>
+        <p class="hero-sub">—— 穿越时空的信仰回响</p>
+        <p class="hero-desc">一封未寄出的家书，照亮民族复兴之路</p>
+        <a href="#background" class="scroll-down" aria-label="向下滚动到时代背景">
+          <span class="arrow-icon">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== 区块2：时代背景 ===== -->
+    <section id="background" class="section bg-dark">
+      <div class="section-inner fade-in">
+        <h2 class="section-title">为何必须有"两弹一星"？<span class="title-sub">—— 生死存亡的战略抉择</span></h2>
+
+        <blockquote class="quote-block">
+          <p>
+            "我们不但要有更多的飞机和大炮，而且还要有原子弹。<br />
+            在今天的世界上，我们要不受人家欺负，就不能没有这个东西。"
+          </p>
+          <cite>—— 毛泽东《论十大关系》（1956年4月25日）</cite>
+        </blockquote>
+
+        <div class="three-col">
+          <article class="card glass-card">
+            <div class="card-img-wrap">
+              <img src="assets/images/background/mao-quote.jpg" alt="领袖决断历史照片" onerror="this.parentNode.classList.add('img-missing')" />
+
+            </div>
+            <div class="card-body">
+              <h3>领袖决断</h3>
+              <p>1956年，毛泽东作出历史性战略决策，中国必须拥有原子武器。</p>
+            </div>
+          </article>
+          <article class="card glass-card">
+            <div class="card-img-wrap">
+              <img src="assets/images/background/coldwar-map.jpg" alt="冷战形势简图" onerror="this.parentNode.classList.add('img-missing')" />
+
+            </div>
+            <div class="card-body">
+              <h3>冷战围堵</h3>
+              <p>1950年代，核大国对中国实施封锁与威胁，形势刻不容缓。</p>
+            </div>
+          </article>
+          <article class="card glass-card">
+            <div class="card-img-wrap">
+              <img src="assets/images/background/1950s-china.jpg" alt="50年代工业场景" onerror="this.parentNode.classList.add('img-missing')" />
+
+            </div>
+            <div class="card-body">
+              <h3>一穷二白</h3>
+              <p>新中国工业基础薄弱，苏联撤援后只能靠自力更生。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 区块3：工程历程 ===== -->
+    <section id="journey" class="section bg-darker">
+      <div class="section-inner fade-in">
+        <h2 class="section-title">隐姓埋名廿载<span class="title-sub">—— 从戈壁滩到太空的征程</span></h2>
+
+        <div class="timeline" role="list">
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-year">1955</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="card-img-wrap">
+                <img src="assets/images/journey/timeline-1955.jpg" alt="决策启动" onerror="this.parentNode.classList.add('img-missing')" />
+
+              </div>
+              <div class="card-body">
+                <h3>决策启动</h3>
+                <p>党中央决定研制原子弹，"596工程"正式立项。</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-year">1964.10.16</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="card-img-wrap">
+                <img src="assets/images/journey/timeline-1964.jpg" alt="原子弹爆炸蘑菇云" onerror="this.parentNode.classList.add('img-missing')" />
+  
+              </div>
+              <div class="card-body">
+                <h3>原子弹爆炸成功</h3>
+                <p>中国第一颗原子弹在罗布泊爆炸成功，举国沸腾。</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-year">1967.6.17</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="card-img-wrap">
+                <img src="assets/images/journey/timeline-1967.jpg" alt="氢弹试验" onerror="this.parentNode.classList.add('img-missing')" />
+  
+              </div>
+              <div class="card-body">
+                <h3>氢弹试验成功</h3>
+                <p>中国第一颗氢弹爆炸成功，用时仅2年8个月，创世界纪录。</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-year">1970.4.24</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="card-img-wrap">
+                <img src="assets/images/journey/timeline-1970.jpg" alt="东方红一号卫星" onerror="this.parentNode.classList.add('img-missing')" />
+  
+              </div>
+              <div class="card-body">
+                <h3>东方红一号升空</h3>
+                <p>中国第一颗人造卫星成功发射，《东方红》响彻太空。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 隐姓埋名廿载 · 纪录视频 -->
+        <div class="video-wrap">
+          <video
+            class="section-video"
+            controls
+            playsinline
+            loop
+            preload="metadata"
+            aria-label="工程历程纪录视频"
+          >
+            <source src="assets/videos/journey.mp4" type="video/mp4" />
+          </video>
+          <div class="video-placeholder">
+            <span class="placeholder-icon">🎬</span>
+            <p>视频剪辑中，敬请期待<br /><small>请将 assets/videos/journey.mp4 上传至仓库</small></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 区块4：家书长廊 ===== -->
+    <section id="letters" class="section bg-dark">
+      <div class="section-inner fade-in">
+        <h2 class="section-title">纸短情长<span class="title-sub">—— 戈壁滩上的家国情怀</span></h2>
+
+        <div class="letter-grid" role="list" aria-label="家书卡片列表">
+          <button
+            class="letter-card"
+            role="listitem"
+            data-id="qiansanqiang"
+            data-title="钱三强 · 公务书信"
+            data-image="assets/images/letters/qiansanqiang-1.jpg"
+            data-scroll="vertical"
+            aria-haspopup="dialog"
+          >
+            <span class="letter-card-icon">✉</span>
+            <span class="letter-card-name">钱三强</span>
+            <span class="letter-card-year">· 公务书信</span>
+          </button>
+          <button
+            class="letter-card"
+            role="listitem"
+            data-id="qianxuesen"
+            data-title="钱学森 · 师友书"
+            data-image="assets/images/letters/qianxuesen-1.jpg"
+            aria-haspopup="dialog"
+          >
+            <span class="letter-card-icon">✉</span>
+            <span class="letter-card-name">钱学森</span>
+            <span class="letter-card-year">· 师友书</span>
+          </button>
+          <button
+            class="letter-card"
+            role="listitem"
+            data-id="yumin"
+            data-title="于敏 · 家书"
+            data-image="assets/images/letters/yumin-1.jpg"
+            data-scroll="vertical"
+            aria-haspopup="dialog"
+          >
+            <span class="letter-card-icon">✉</span>
+            <span class="letter-card-name">于敏</span>
+            <span class="letter-card-year">· 家书</span>
+          </button>
+          <button
+            class="letter-card"
+            role="listitem"
+            data-id="yaotongbin"
+            data-title="姚桐斌 · 家书"
+            data-image="assets/images/letters/yaotongbin-1.jpg"
+            aria-haspopup="dialog"
+          >
+            <span class="letter-card-icon">✉</span>
+            <span class="letter-card-name">姚桐斌</span>
+            <span class="letter-card-year">· 家书</span>
+          </button>
+          <button
+            class="letter-card"
+            role="listitem"
+            data-id="guo"
+            data-title="郭永怀 · 家书"
+            data-image="assets/images/letters/guo-1.jpg"
+            data-scroll="vertical"
+            aria-haspopup="dialog"
+          >
+            <span class="letter-card-icon">✉</span>
+            <span class="letter-card-name">郭永怀</span>
+            <span class="letter-card-year">· 家书</span>
+          </button>
+          <button
+            class="letter-card"
+            role="listitem"
+            data-id="deng"
+            data-title="邓稼先 · 致友书"
+            data-image="assets/images/letters/deng-1.jpg,assets/images/letters/deng-2.jpg"
+            data-scroll="vertical"
+            aria-haspopup="dialog"
+          >
+            <span class="letter-card-icon">✉</span>
+            <span class="letter-card-name">邓稼先</span>
+            <span class="letter-card-year">· 致友书</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 区块5：理论之光 ===== -->
+    <section id="theory" class="section bg-darker">
+      <div class="section-inner fade-in">
+        <h2 class="section-title">探索的理论结晶<span class="title-sub">—— 社会主义建设道路的初步成果</span></h2>
+
+        <div class="theory-grid">
+          <article class="theory-item glass-card">
+            <div class="theory-icon" aria-hidden="true">🔬</div>
+            <h3>"独立自主、自力更生"<br /><span class="theory-subtitle">—— 理论方针与精神实践的互证</span></h3>
+            <p>毛泽东在《论十大关系》中明确提出"以苏为鉴"，强调不能照搬苏联模式；在"两弹一星"研制中，党中央确立了<strong>"自力更生为主，争取外援为辅"</strong>的方针。这是对适合中国国情的社会主义建设道路的独立探索，是"两弹一星"精神与社会主义建设理论最为核心的连接点。</p>
+          </article>
+          <article class="theory-item glass-card">
+            <div class="theory-icon" aria-hidden="true">🤝</div>
+            <h3>"调动一切积极因素"<br /><span class="theory-subtitle">—— 制度优势与个人奉献的统一</span></h3>
+            <p>《论十大关系》的基本方针是<strong>"把国内外一切积极的因素……全部调动起来"</strong>。《关于正确处理人民内部矛盾的问题》进一步提出要统筹兼顾，正确处理国家、集体和个人的利益关系。在"两弹一星"工程中，全国上下、数以万计的人员被动员起来，将制度优势与个人奉献完美统一，形成了举国同心办大事的壮阔局面。</p>
+          </article>
+          <article class="theory-item glass-card">
+            <div class="theory-icon" aria-hidden="true">🏛</div>
+            <h3>"正确处理人民内部矛盾"<br /><span class="theory-subtitle">—— 家国情怀与价值导向的升华</span></h3>
+            <p>《关于正确处理人民内部矛盾的问题》指出，社会主义社会的矛盾大量表现为人民内部矛盾，要用民主的、说服教育的方法解决，并提出了<strong>"为人民服务"</strong>的根本价值立场。"两弹一星"元勋们将国家利益置于个人利益之上，以隐姓埋名的奉献精神，生动诠释了这一价值导向的崇高含义。</p>
+          </article>
+          <article class="theory-item glass-card">
+            <div class="theory-icon" aria-hidden="true">📖</div>
+            <h3>"物质基础与精神财富"<br /><span class="theory-subtitle">—— 探索意义的双重维度</span></h3>
+            <p>党对社会主义建设道路的初步探索，既奠定了<strong>独立的工业体系和国防安全</strong>的物质基础，也积累了宝贵的精神财富。"两弹一星"的成功不仅打破了核垄断、捍卫了国家安全，更铸就了"两弹一星"精神，为中国特色社会主义事业提供了理论准备、物质基础和宝贵经验。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 区块6：辉煌结局 ===== -->
+    <section id="outcome" class="section bg-dark">
+      <div class="section-inner fade-in">
+        <h2 class="section-title">星河长明<span class="title-sub">—— 两弹一星的永恒回响</span></h2>
+
+        <div class="three-col">
+          <article class="card glass-card outcome-card">
+            <div class="card-img-wrap">
+              <img src="assets/images/outcome/success-1.jpg" alt="科学家欢呼合影" onerror="this.parentNode.classList.add('img-missing')" />
+
+            </div>
+            <div class="card-body">
+              <h3>国家安全</h3>
+              <p>打破核垄断，结束超级大国核讹诈时代，奠定中国大国地位。</p>
+            </div>
+          </article>
+          <article class="card glass-card outcome-card">
+            <div class="card-img-wrap">
+              <img src="assets/images/outcome/satellite.jpg" alt="东方红一号卫星模型" onerror="this.parentNode.classList.add('img-missing')" />
+
+            </div>
+            <div class="card-body">
+              <h3>科技体系</h3>
+              <p>建立起独立完整的国防科技工业体系，为后来的航天事业打下坚实基础。</p>
+            </div>
+          </article>
+          <article class="card glass-card outcome-card">
+            <div class="card-img-wrap">
+              <img src="assets/images/outcome/legacy.jpg" alt="神舟飞船与北斗卫星" onerror="this.parentNode.classList.add('img-missing')" />
+
+            </div>
+            <div class="card-body">
+              <h3>精神传承</h3>
+              <p>"两弹一星"精神写入中国共产党人精神谱系，激励一代代中国人奋勇前行。</p>
+            </div>
+          </article>
+        </div>
+
+        <blockquote class="quote-block gold">
+          <p>1999年9月18日，党中央、国务院、中央军委隆重表彰为研制"两弹一星"作出突出贡献的科技专家，授予23位科学家"两弹一星功勋奖章"。</p>
+        </blockquote>
+
+        <div class="outcome-img-wrap">
+          <img
+            src="assets/images/outcome/gongxun.jpg"
+            alt="两弹一星功勋奖章墙"
+            class="outcome-img"
+            onerror="this.parentNode.style.display='none'"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 区块7：致未来 ===== -->
+    <section id="interaction" class="section bg-darker interaction-section">
+      <div class="interaction-bg">
+        <img
+          src="assets/images/interaction/future-bg.jpg"
+          alt="星空信纸背景"
+          class="hero-bg-img"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <div class="overlay overlay-dark"></div>
+      <div class="section-inner interaction-inner fade-in">
+        <h2 class="section-title">写下你的家书<span class="title-sub">—— 与1964年的他们隔空对话</span></h2>
+
+        <div class="message-area glass-card">
+          <label for="messageInput" class="message-label">给星空写一封信</label>
+          <textarea
+            id="messageInput"
+            class="message-input"
+            placeholder="寄往星空……"
+            rows="6"
+            aria-label="留言输入框"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" type="button">寄往星空 ✉</button>
+          <p id="sendFeedback" class="send-feedback" aria-live="polite"></p>
+        </div>
+
+        <p class="closing-quote">
+          他们隐姓埋名，是为了让我们挺直腰杆。<br />
+          今日山河锦绣，如您所愿。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 YangJiawen · 《"两弹一星"元勋的戈壁家书》沉浸式体验网站</p>
+  </footer>
+
+  <!-- ===== 家书模态框 ===== -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content glass-card">
+      <button id="closeModal" class="close-btn" type="button" aria-label="关闭弹窗">×</button>
+      <h3 id="modalTitle" class="modal-title"></h3>
+      <div class="modal-img-wrap">
+        <div id="modalGallery" class="modal-gallery">
+          <!-- JS 动态填充图片 -->
+        </div>
+        <div class="modal-gallery-pages" id="modalPageIndicator" aria-live="polite"></div>
+        <div class="modal-img-placeholder">
+          <span>家书扫描件</span>
+        </div>
+      </div>
+      <p id="modalText" class="modal-text"></p>
+    </div>
+  </div>
+
+</body>
+</html>
