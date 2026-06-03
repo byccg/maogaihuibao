@@ -29,12 +29,17 @@
     <!-- ===== 区块1：首页 ===== -->
     <section id="home" class="section hero-section">
       <div class="hero-bg">
-        <img
-          src="assets/images/home/bg-home.jpg"
-          alt="戈壁滩星空背景"
-          class="hero-bg-img"
-          onerror="this.style.display='none'"
-        />
+        <picture>
+          <source srcset="assets/images/home/bg-home.webp" type="image/webp" />
+          <img
+            src="assets/images/home/bg-home.jpg"
+            alt="戈壁滩星空背景"
+            class="hero-bg-img"
+            fetchpriority="high"
+            decoding="async"
+            onerror="this.style.display='none'"
+          />
+        </picture>
       </div>
       <div class="overlay"></div>
       <div class="hero-content fade-in">
@@ -64,7 +69,7 @@
         <div class="three-col">
           <article class="card glass-card">
             <div class="card-img-wrap">
-              <img src="assets/images/background/mao-quote.jpg" alt="领袖决断历史照片" onerror="this.parentNode.classList.add('img-missing')" />
+              <img src="assets/images/background/mao-quote.jpg" alt="领袖决断历史照片" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
             </div>
             <div class="card-body">
@@ -74,7 +79,7 @@
           </article>
           <article class="card glass-card">
             <div class="card-img-wrap">
-              <img src="assets/images/background/coldwar-map.jpg" alt="冷战形势简图" onerror="this.parentNode.classList.add('img-missing')" />
+              <img src="assets/images/background/coldwar-map.jpg" alt="冷战形势简图" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
             </div>
             <div class="card-body">
@@ -84,7 +89,7 @@
           </article>
           <article class="card glass-card">
             <div class="card-img-wrap">
-              <img src="assets/images/background/1950s-china.jpg" alt="50年代工业场景" onerror="this.parentNode.classList.add('img-missing')" />
+              <img src="assets/images/background/1950s-china.jpg" alt="50年代工业场景" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
             </div>
             <div class="card-body">
@@ -107,7 +112,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-card glass-card">
               <div class="card-img-wrap">
-                <img src="assets/images/journey/timeline-1955.jpg" alt="决策启动" onerror="this.parentNode.classList.add('img-missing')" />
+                <img src="assets/images/journey/timeline-1955.jpg" alt="决策启动" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
               </div>
               <div class="card-body">
@@ -121,7 +126,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-card glass-card">
               <div class="card-img-wrap">
-                <img src="assets/images/journey/timeline-1964.jpg" alt="原子弹爆炸蘑菇云" onerror="this.parentNode.classList.add('img-missing')" />
+                <img src="assets/images/journey/timeline-1964.jpg" alt="原子弹爆炸蘑菇云" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
   
               </div>
               <div class="card-body">
@@ -135,7 +140,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-card glass-card">
               <div class="card-img-wrap">
-                <img src="assets/images/journey/timeline-1967.jpg" alt="氢弹试验" onerror="this.parentNode.classList.add('img-missing')" />
+                <img src="assets/images/journey/timeline-1967.jpg" alt="氢弹试验" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
   
               </div>
               <div class="card-body">
@@ -149,7 +154,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-card glass-card">
               <div class="card-img-wrap">
-                <img src="assets/images/journey/timeline-1970.jpg" alt="东方红一号卫星" onerror="this.parentNode.classList.add('img-missing')" />
+                <img src="assets/images/journey/timeline-1970.jpg" alt="东方红一号卫星" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
   
               </div>
               <div class="card-body">
@@ -167,7 +172,8 @@
             controls
             playsinline
             loop
-            preload="metadata"
+            preload="none"
+            poster="assets/images/journey/timeline-1964.jpg"
             aria-label="工程历程纪录视频"
           >
             <source src="assets/videos/journey.mp4" type="video/mp4" />
@@ -306,7 +312,7 @@
         <div class="three-col">
           <article class="card glass-card outcome-card">
             <div class="card-img-wrap">
-              <img src="assets/images/outcome/success-1.jpg" alt="科学家欢呼合影" onerror="this.parentNode.classList.add('img-missing')" />
+              <img src="assets/images/outcome/success-1.jpg" alt="科学家欢呼合影" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
             </div>
             <div class="card-body">
@@ -316,7 +322,7 @@
           </article>
           <article class="card glass-card outcome-card">
             <div class="card-img-wrap">
-              <img src="assets/images/outcome/satellite.jpg" alt="东方红一号卫星模型" onerror="this.parentNode.classList.add('img-missing')" />
+              <img src="assets/images/outcome/satellite.jpg" alt="东方红一号卫星模型" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
             </div>
             <div class="card-body">
@@ -326,7 +332,7 @@
           </article>
           <article class="card glass-card outcome-card">
             <div class="card-img-wrap">
-              <img src="assets/images/outcome/legacy.jpg" alt="神舟飞船与北斗卫星" onerror="this.parentNode.classList.add('img-missing')" />
+              <img src="assets/images/outcome/legacy.jpg" alt="神舟飞船与北斗卫星" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('img-missing')" />
 
             </div>
             <div class="card-body">
@@ -345,6 +351,8 @@
             src="assets/images/outcome/gongxun.jpg"
             alt="两弹一星功勋奖章墙"
             class="outcome-img"
+            loading="lazy"
+            decoding="async"
             onerror="this.parentNode.style.display='none'"
           />
         </div>
@@ -358,6 +366,8 @@
           src="assets/images/interaction/future-bg.jpg"
           alt="星空信纸背景"
           class="hero-bg-img"
+          loading="lazy"
+          decoding="async"
           onerror="this.style.display='none'"
         />
       </div>
